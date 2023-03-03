@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import ReactDOM from "react-dom/client";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -45,16 +46,15 @@ export default function App() {
           updateFavoritePokemons: updateFavoritePokemons,
         }}
       >
+        <Layout/>
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
+            <Route index path="/" element={<Home />} />
             <Route
               exact
               path="/pokemonDetail/:name"
               element={<PokemonDetail />}
             />
             <Route path="/pokemonFavorites" element={<PokemonFavorites />} />
-          </Route>
         </Routes>
       </FavoriteProvider>
     </BrowserRouter>

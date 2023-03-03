@@ -1,25 +1,31 @@
 import { Outlet, Link } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 const Layout = () => {
-  const logoImg =
-    "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
   return (
     <>
-      <nav>
-        <div>
-          <img alt="pokeapi-logo" src={logoImg} className="navbar-img" />
-        </div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/pokemonFavorites">Favorites</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <Outlet />
+      <Navbar className="color-nav" expand="lg">
+        <Navbar.Brand as={Link} to="/">
+          <img
+            alt="logo"
+            src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
+            width="70"
+            height="30"
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/">
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/pokemonFavorites">
+              Favorites
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     </>
   );
 };
