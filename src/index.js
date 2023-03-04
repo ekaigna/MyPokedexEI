@@ -8,6 +8,10 @@ import Home from "./pages/Home/Home";
 import PokemonDetail from "./pages/PokemonDetail/PokemonDetail";
 import PokemonFavorites from "./pages/PokemonFavorites/PokemonFavorites";
 import { FavoriteProvider } from "./contexts/favouritesContext";
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 export default function App() {
 
@@ -18,7 +22,6 @@ export default function App() {
     const pokemons =
     JSON.parse(window.localStorage.getItem(favoritesKey)) || [];
     setFavorites(pokemons);
-    console.log("favourite",pokemons);
   };
 
   useEffect(() => {

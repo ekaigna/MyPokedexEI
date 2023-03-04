@@ -2,12 +2,12 @@ import React from "react";
 import Pokemon from "./Pokemon";
 import Pagination from "./Pagination";
 import { Link } from "react-router-dom";
+import HomeLoading from "./HomeLoading";
 
 const Pokedex = (props) => {
   const { pokemons, loading, page, setPage, totalPages } = props;
 
   const onLeftClickHandler = () => {
-    console.log("volta");
     if (page > 0) {
       setPage(page - 1);
     }
@@ -30,13 +30,26 @@ const Pokedex = (props) => {
         />
       </div>
       {loading ? (
-        <div>Loading...</div>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+            <div className="pokedex-grid">
+              <HomeLoading />
+              <HomeLoading />
+              <HomeLoading />
+              <HomeLoading />
+              <HomeLoading />
+              <HomeLoading />
+            </div>
+        </div>
       ) : (
         <div className="pokedex-grid">
           {pokemons &&
             pokemons.map((pokemon, index) => {
               return (
-                <Link style={{ textDecoration: 'none' }} to={`/pokemonDetail/${pokemon.name}`} state={{ pokemon }}>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/pokemonDetail/${pokemon.name}`}
+                  state={{ pokemon }}
+                >
                   <Pokemon key={index} pokemon={pokemon} />
                 </Link>
               );
