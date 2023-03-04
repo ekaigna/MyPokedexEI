@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from "react";
 import FavoriteContext from "../../contexts/favouritesContext";
 import { Link } from "react-router-dom";
 import Pokemon from "../../components/Pokemon";
-import "./PokemonFavorites.css";
 import { getPokemon } from "../../api";
 
 const PokemonFavorites = () => {

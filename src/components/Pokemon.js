@@ -24,18 +24,20 @@ const Pokemon = (props) => {
           src={pokemon.sprites.front_default}
           className="pokemon-image"
         />
+        <div className="pokemon-id">
+          <div className="id-text">{pokemon.id}</div>
+        </div>
       </div>
       <div className="card-body">
         <div className="card-top">
           <h3> {pokemon.name}</h3>
-          <div>#{pokemon.id}</div>
         </div>
         <div className="card-bottom">
           <div className="pokemon-type">
             {pokemon.types.map((type, index) => {
               return (
-                <div key={index} className="pokemon-type-text">
-                  {type.type.name}
+                <div key={index} className="pokemon-chip">
+                  <div className="pokemon-type-text">{type.type.name}</div>
                 </div>
               );
             })}
