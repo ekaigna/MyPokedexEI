@@ -20,6 +20,10 @@ const PokemonDetail = () => {
     updateFavoritePokemons(pokemon.name);
   };
 
+  const changeAPIStat = (stat) => {
+    return stat.replace("-", " ");
+  };
+
   const heart_color = favoritePokemonNames.includes(pokemon.name)
     ? "#406264"
     : "#65979a";
@@ -64,64 +68,36 @@ const PokemonDetail = () => {
               />
             </button>
           </div>
+          <div className="chip-container">
+            <div className="pokemon-type">
+              {pokemon.types.map((type, index) => {
+                return (
+                  <div key={index} className="pokemon-chip-detail">
+                    <div className="detail-type-text">{type.type.name}</div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
         <div className="pokemon-detail-description">
           <h3>{pokemon.name}</h3>
           <div className="progress-container">
-            <ProgressBar
-              label="Healthy Points"
-              visualParts={[
-                {
-                  percentage: "60%",
-                  color: "tan",
-                },
-              ]}
-            />
-            <ProgressBar
-              label="Healthy Points"
-              visualParts={[
-                {
-                  percentage: "60%",
-                  color: "tan",
-                },
-              ]}
-            />
-            <ProgressBar
-              label="Healthy Points"
-              visualParts={[
-                {
-                  percentage: "60%",
-                  color: "tan",
-                },
-              ]}
-            />
-            <ProgressBar
-              label="Healthy Points"
-              visualParts={[
-                {
-                  percentage: "60%",
-                  color: "tan",
-                },
-              ]}
-            />
-            <ProgressBar
-              label="Healthy Points"
-              visualParts={[
-                {
-                  percentage: "60%",
-                  color: "tan",
-                },
-              ]}
-            />
-            <ProgressBar
-              label="Healthy Points"
-              visualParts={[
-                {
-                  percentage: "60%",
-                  color: "tan",
-                },
-              ]}
-            />
+            {pokemon &&
+              pokemon.stats.map((stat, index) => {
+                return (
+                  <ProgressBar
+                    key={index}
+                    label={changeAPIStat(stat.stat.name)}
+                    visualParts={[
+                      {
+                        percentage: stat.base_stat,
+                        color: "tan",
+                      },
+                    ]}
+                  />
+                );
+              })}
           </div>
         </div>
       </div>

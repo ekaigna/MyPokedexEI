@@ -3,6 +3,7 @@
   height: 100vh;
   grid-template-columns: 1fr;
   padding: 10%;
+  padding-top: 4%;
   gap: 2rem;
   grid-template-rows: 300px 1fr;
 }
@@ -19,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position:relative;
+  position: relative;
   background-color: #c4e3d4;
   border-radius: 40px;
 }
@@ -34,77 +35,97 @@
   text-transform: capitalize;
   font-size: 50px;
   letter-spacing: 4px;
-  color:#59878a
+  color: #59878a;
 }
 
 .progress-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 20px;
 }
 
 @media (min-width: 600px) {
-    .progress-container {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
-      grid-template-areas: "image-detail description";
-    }
+  .progress-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "image-detail description";
   }
+}
 
 .progress-view {
 }
 
 .description-text {
-    color: #4B4B4B;
-    font-size: small;
-    margin-bottom: 5px;
-    text-transform: capitalize;
+  color: #4b4b4b;
+  font-size: small;
+  margin-bottom: 5px;
+  text-transform: capitalize;
 }
 
 .heart-icon-detail {
-    font-size: 35px;
+  font-size: 35px;
 }
 
 .favorite-detail {
-    position: absolute;
-    top: 25px;
-    left: 25px;
+  position: absolute;
+  top: 25px;
+  left: 25px;
 }
 
+.chip-container {
+  position: absolute;
+  bottom: 5px;
+  right: 5%;
+}
+
+.pokemon-chip-detail {
+  background-color: #406264;
+  margin: 5px;
+  padding: 5px;
+  padding-left: 33px;
+  padding-right: 33px;
+  border-radius: 20px;
+}
+
+.detail-type-text {
+  text-transform: lowercase;
+  color: #deded8;
+  font-size: medium;
+}
 /*************************************/
 
 .shadow-effect {
-    background: #fff;
-    padding: 20px;
-    border-radius: 4px;
-    text-align: center;
-    border: 1px solid #ECECEC;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.02);
-  }
-  #shadow-effect p {
-    font-family: inherit;
-    font-size: 17px;
-    line-height: 1.5;
-    margin: 0 0 17px 0;
-    font-weight: 300;
-  }
-  #customer-testimonoals {
-    margin-top: 6%;
-  }
-  #customer-testimonoals .item {
-    text-align: center;
-    padding: 50px;
-    margin-bottom: 0px;
-    opacity: 0.2;
-    transform: scale3d(0.8, 0.8, 1);
-    transition: all 0.3s ease-in-out;
-  }
-  #customer-testimonoals .owl-item.active.center .item {
-    opacity: 1;
-    transform: scale3d(1.0, 1.0, 1);
-  }
-  /*.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+  border: 1px solid #ececec;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.1), 0 15px 12px rgba(0, 0, 0, 0.02);
+}
+#shadow-effect p {
+  font-family: inherit;
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 0 0 17px 0;
+  font-weight: 300;
+}
+#customer-testimonoals {
+  margin-top: 6%;
+}
+#customer-testimonoals .item {
+  text-align: center;
+  padding: 50px;
+  margin-bottom: 0px;
+  opacity: 0.2;
+  transform: scale3d(0.8, 0.8, 1);
+  transition: all 0.3s ease-in-out;
+}
+#customer-testimonoals .owl-item.active.center .item {
+  opacity: 1;
+  transform: scale3d(1, 1, 1);
+}
+/*.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
     background: #56423D;
     transform: translate3d(0px, -50%, 0px) scale(0.8);
   }
@@ -127,4 +148,3 @@
     transform-origin: 50% 50% 0;
     transition: all 250ms ease-out 0s;
   }  */
-
