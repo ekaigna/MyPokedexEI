@@ -15,7 +15,7 @@ const Pokemon = (props) => {
     updateFavoritePokemons(pokemon.name);
   };
 
-  const heart_color = favoritePokemonNames.includes(pokemon.name) ? "#406264" : "#6d9682";
+  const heart_color = favoritePokemonNames.includes(pokemon.name) ? "#406264" : "#65979a";
 
   return (
     <div className="pokemon-card">
@@ -32,9 +32,10 @@ const Pokemon = (props) => {
             </button>
           </div>
         ) : (
-          <div className="pokemon-id">
-            <div className="id-text">{pokemon.id}</div>
-          </div>
+          // <div className="pokemon-id">
+          //   <div className="id-text">{pokemon.id}</div>
+          // </div>
+          null
         )}
       </div>
       <div className="card-body">

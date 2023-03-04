@@ -30,7 +30,7 @@ const PokemonFavorites = () => {
   }, [favoritePokemonNames]);
 
   return (
-    <div className="pokedex-grid">
+    <div style={{marginTop: 55}} className="pokedex-grid">
       {favoritePokemons && favoritePokemons.length > 0 ? (
         favoritePokemons.map((pokemon, index) => {
           return (
