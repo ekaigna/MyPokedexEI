@@ -3,6 +3,8 @@ import FavoriteContext from "../../contexts/favouritesContext";
 import { Link } from "react-router-dom";
 import Pokemon from "../../components/Pokemon";
 import { getPokemon } from "../../api";
+import { faFaceFrown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const PokemonFavorites = () => {
   const { favoritePokemonNames } = useContext(FavoriteContext);
@@ -30,15 +32,18 @@ const PokemonFavorites = () => {
   }, [favoritePokemonNames]);
 
   return (
-    <div style={{marginTop: 55}} className="pokedex-grid">
+    <div style={{ display: "flex", justifyContent: "center", marginTop: 55 }}>
       {favoritePokemons && favoritePokemons.length > 0 ? (
-        favoritePokemons.map((pokemon, index) => {
-          return (
-              <Pokemon key={index} pokemon={pokemon} />
-          );
-        })
+        <div className="pokedex-grid">
+          {favoritePokemons.map((pokemon, index) => {
+            return <Pokemon key={index} pokemon={pokemon} />
+          })}
+        </div>
       ) : (
-        <div>Not found</div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div className="not-found">There are no favorite pokemons here</div>
+          <FontAwesomeIcon className="sad-icon" icon={faFaceFrown} />
+        </div>
       )}
     </div>
   );

@@ -3,14 +3,14 @@ import ContentLoader from 'react-content-loader'
 
 const HomeLoading = props => (
   <ContentLoader
-    width={290}
+    width={230}
     height={300}
-    viewBox="0 0 290 300"
-    backgroundColor="#f3f3f3"
-    foregroundColor="#ecebeb"
+    viewBox="0 0 230 300"
+    backgroundColor="#e9f3f4"
+    foregroundColor="#d2e3e5"
     {...props}
   >
-    <rect x="0" y="0" rx="20" ry="20" width="290" height="300" />
+    <rect x="0" y="0" rx="20" ry="20" width="230" height="300" />
   </ContentLoader>
 )
 

@@ -29,8 +29,8 @@ const Pokedex = (props) => {
           onRightClick={onRightClickHandler}
         />
       </div>
-      {loading ? (
-        <div style={{ display: "flex", justifyContent: "center" }}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        {loading ? (
             <div className="pokedex-grid">
               <HomeLoading />
               <HomeLoading />
@@ -39,23 +39,23 @@ const Pokedex = (props) => {
               <HomeLoading />
               <HomeLoading />
             </div>
-        </div>
-      ) : (
-        <div className="pokedex-grid">
-          {pokemons &&
-            pokemons.map((pokemon, index) => {
-              return (
-                <Link
-                  style={{ textDecoration: "none" }}
-                  to={`/pokemonDetail/${pokemon.name}`}
-                  state={{ pokemon }}
-                >
-                  <Pokemon key={index} pokemon={pokemon} />
-                </Link>
-              );
-            })}
-        </div>
-      )}
+        ) : (
+          <div className="pokedex-grid">
+            {pokemons &&
+              pokemons.map((pokemon, index) => {
+                return (
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/pokemonDetail/${pokemon.name}`}
+                    state={{ pokemon }}
+                  >
+                    <Pokemon key={index} pokemon={pokemon} />
+                  </Link>
+                );
+              })}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

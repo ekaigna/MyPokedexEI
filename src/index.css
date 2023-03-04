@@ -33,8 +33,6 @@ html {
   margin: 0 auto;
   display: grid;
   gap: 1rem;
-  padding-left: 15%;
-  padding-right: 15%;
 }
 
 @media (min-width: 600px) {
@@ -220,3 +218,17 @@ button {
   color: #2e3056;
   font-weight: bold;
 }
+
+.not-found {
+  text-transform: uppercase;
+  color: #59878a;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.sad-icon {
+  color: #59878a;
+  font-size: 72px;
+  margin-top: 20px;
+}
+
