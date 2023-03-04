@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import FavoriteContext from "../contexts/favouritesContext";
 import { useLocation } from "react-router-dom";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Pokemon = (props) => {
   const { pokemon } = props;
@@ -8,13 +10,12 @@ const Pokemon = (props) => {
     useContext(FavoriteContext);
 
   const location = useLocation();
-  console.log("location", location.pathname);
 
   const onHeartClick = () => {
     updateFavoritePokemons(pokemon.name);
   };
 
-  const heart = favoritePokemonNames.includes(pokemon.name) ? "❤️" : "🖤";
+  const heart_color = favoritePokemonNames.includes(pokemon.name) ? "#406264" : "#6d9682";
 
   return (
     <div className="pokemon-card">
@@ -24,9 +25,17 @@ const Pokemon = (props) => {
           src={pokemon.sprites.front_default}
           className="pokemon-image"
         />
-        <div className="pokemon-id">
-          <div className="id-text">{pokemon.id}</div>
-        </div>
+        {location.pathname !== "/" ? (
+          <div className="favorite">
+            <button onClick={onHeartClick}>
+              <FontAwesomeIcon color={heart_color} className="heart-icon" icon={faHeart} />
+            </button>
+          </div>
+        ) : (
+          <div className="pokemon-id">
+            <div className="id-text">{pokemon.id}</div>
+          </div>
+        )}
       </div>
       <div className="card-body">
         <div className="card-top">
@@ -42,11 +51,6 @@ const Pokemon = (props) => {
               );
             })}
           </div>
-          {location.pathname !== "/" && (
-            <button className="pokemon-heart-btn" onClick={onHeartClick}>
-              {heart}
-            </button>
-          )}
         </div>
       </div>
     </div>

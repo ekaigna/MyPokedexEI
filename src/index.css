@@ -4,15 +4,16 @@ body {
 
 .color-nav {
   background-color: #f5fbfb;
-  padding: 10px !important;
+  padding: 20px !important;
 }
 
 .nav-link {
   color: #2e3056 !important;
   text-transform: uppercase !important;
   font-weight: 700 !important;
-  padding-right: 20px !important;
-  padding-left: 20px !important;
+  padding-right: 30px !important;
+  padding-left: 30px !important;
+  font-size: large !important;
 }
 
 .navbar-brand {
@@ -74,17 +75,15 @@ body {
   align-items: center;
 }
 
+.favorite {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
 .id-text {
   color: #78aeb1;
   font-weight: bold;
-}
-
-.card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 10px 10px 10px 0px;
-  flex: 1;
 }
 
 .card-top {
@@ -170,7 +169,7 @@ section {
   padding: 15px;
 }
 
-.button {
+button {
   background: none;
   color: inherit;
   border: none;
@@ -182,6 +181,14 @@ section {
 
 .font-upload {
   color: #c4e3d4;
+}
+
+.favorite:hover .heart-icon {
+  color: #406264;
+}
+
+.heart-icon {
+  font-size: 25px;
 }
 
 .upload-icon {
