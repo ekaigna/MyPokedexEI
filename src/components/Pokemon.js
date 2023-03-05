@@ -27,11 +27,11 @@ const Pokemon = (props) => {
       style={{ backgroundColor: typeToColorMapper[pokemon.types[0].type.name]}}
     >
       <div className="pokemon-image-container">
-        <img
+        {pokemon.sprites.front_default && <img
           alt={pokemon.name}
           src={pokemon.sprites.front_default}
           className="pokemon-image"
-        />
+        />}
         {location.pathname !== "/" ? (
           <div className="favorite">
             <button onClick={onHeartClick}>
