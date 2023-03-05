@@ -3,6 +3,8 @@ import FavoriteContext from "../contexts/favouritesContext";
 import { useLocation } from "react-router-dom";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import typeToColorMapper from "./colors";
+import typeToChipColorMapper from "./chipColors";
 
 const Pokemon = (props) => {
   const { pokemon } = props;
@@ -15,10 +17,15 @@ const Pokemon = (props) => {
     updateFavoritePokemons(pokemon.name);
   };
 
-  const heart_color = favoritePokemonNames.includes(pokemon.name) ? "#406264" : "#65979a";
+  const heart_color = favoritePokemonNames.includes(pokemon.name)
+    ? "#406264"
+    : "#65979a";
 
   return (
-    <div className="pokemon-card">
+    <div
+      className="pokemon-card"
+      style={{ backgroundColor: typeToColorMapper[pokemon.types[0].type.name]}}
+    >
       <div className="pokemon-image-container">
         <img
           alt={pokemon.name}
@@ -28,17 +35,19 @@ const Pokemon = (props) => {
         {location.pathname !== "/" ? (
           <div className="favorite">
             <button onClick={onHeartClick}>
-              <FontAwesomeIcon color={heart_color} className="heart-icon" icon={faHeart} />
+              <FontAwesomeIcon
+                color={heart_color}
+                className="heart-icon"
+                icon={faHeart}
+              />
             </button>
           </div>
-        ) : (
-          // <div className="pokemon-id">
-          //   <div className="id-text">{pokemon.id}</div>
-          // </div>
-          null
-        )}
+        ) : // <div className="pokemon-id">
+        //   <div className="id-text">{pokemon.id}</div>
+        // </div>
+        null}
       </div>
-      <div className="card-body">
+      <div className="pokemon-card-body">
         <div className="card-top">
           <h3> {pokemon.name}</h3>
         </div>
@@ -46,7 +55,7 @@ const Pokemon = (props) => {
           <div className="pokemon-type">
             {pokemon.types.map((type, index) => {
               return (
-                <div key={index} className="pokemon-chip">
+                <div key={index} className="pokemon-chip" style={{backgroundColor: typeToChipColorMapper[type.type.name]}}>
                   <div className="pokemon-type-text">{type.type.name}</div>
                 </div>
               );

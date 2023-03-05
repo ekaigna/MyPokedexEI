@@ -8,6 +8,8 @@ import ProgressBar from "../../components/ProgressBar/ProgressBar";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import typeToChipColorMapper from "../../components/chipColors";
+import typeToColorMapper from "../../components/colors";
 
 const PokemonDetail = () => {
   const location = useLocation();
@@ -25,8 +27,8 @@ const PokemonDetail = () => {
   };
 
   const heart_color = favoritePokemonNames.includes(pokemon.name)
-    ? "#406264"
-    : "#65979a";
+    ? "#636d81fa"
+    : "#636d8154";
 
   const options = {
     loop: true,
@@ -57,7 +59,12 @@ const PokemonDetail = () => {
     // </>
     <div>
       <div className="detail-container">
-        <div className="pokemon-detail-image">
+        <div
+          className="pokemon-detail-image"
+          style={{
+            backgroundColor: typeToColorMapper[pokemon.types[0].type.name],
+          }}
+        >
           <img alt={pokemon.name} src={pokemon.sprites.front_default} />
           <div className="favorite-detail">
             <button onClick={onHeartClick}>
@@ -72,7 +79,13 @@ const PokemonDetail = () => {
             <div className="pokemon-type">
               {pokemon.types.map((type, index) => {
                 return (
-                  <div key={index} className="pokemon-chip-detail">
+                  <div
+                    key={index}
+                    className="pokemon-chip-detail"
+                    style={{
+                      backgroundColor: typeToChipColorMapper[type.type.name],
+                    }}
+                  >
                     <div className="detail-type-text">{type.type.name}</div>
                   </div>
                 );
