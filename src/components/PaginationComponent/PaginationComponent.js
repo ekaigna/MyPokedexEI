@@ -23,7 +23,6 @@ const PaginationComponent = (props) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        padding: 20,
         boxSizing: "border-box",
         width: "100%",
         height: "100%",

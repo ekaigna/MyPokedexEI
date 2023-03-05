@@ -31,7 +31,7 @@ const Home = () => {
   }, [page]);
 
   return (
-      <div>
+      <div className="container">
         <Pokedex
           pokemons={pokemons}
           loading={loading}

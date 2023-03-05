@@ -3,6 +3,11 @@ html {
   background-color: #f5fbfb !important;
 }
 
+.container {
+  padding-right: 1.6%;
+  padding-left: 1.6%;
+}
+
 .color-nav {
   background-color: #f5fbfb;
   padding: 20px !important;
@@ -25,7 +30,6 @@ html {
 .pokedex-header {
   display: flex;
   justify-content: flex-end;
-  padding: 1.6%;
 }
 
 .pokedex-grid {
@@ -221,13 +225,13 @@ button {
 
 .not-found {
   text-transform: uppercase;
-  color: #59878a;
+  color: #90bfc2;
   font-size: xx-large;
   font-weight: bold;
 }
 
 .sad-icon {
-  color: #59878a;
+  color: #90bfc2;
   font-size: 72px;
   margin-top: 20px;
 }

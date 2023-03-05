@@ -6,19 +6,7 @@ import HomeLoading from "./HomeLoading";
 import PaginationComponent from "./PaginationComponent/PaginationComponent";
 
 const Pokedex = (props) => {
-  const { pokemons, loading, page, setPage, totalPages } = props;
-
-  const onLeftClickHandler = () => {
-    if (page > 0) {
-      setPage(page - 1);
-    }
-  };
-
-  const onRightClickHandler = () => {
-    if (page + 1 < totalPages) {
-      setPage(page + 1);
-    }
-  };
+  const { pokemons, loading, setPage, totalPages } = props;
 
   return (
     <div>
