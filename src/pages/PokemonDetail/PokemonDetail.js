@@ -178,6 +178,16 @@ const PokemonDetail = () => {
               })}
           </div>
         </div>
+        <div className="description-container">
+          <h3>Descrição</h3>
+          <div>
+            Lorem ipsum dolor sit amet. Est minima autem in nobis rerum qui
+            consequatur accusamus eum consectetur dolore in autem laudantium qui
+            explicabo beatae. A architecto maiores et veritatis voluptates aut
+            ipsum quia eos fuga voluptatem rem quasi consequatur. Ea maxime
+            dolor quo Quis deserunt sed consectetur quibusdam.
+          </div>
+        </div>
       </div>
     </div>
   );
