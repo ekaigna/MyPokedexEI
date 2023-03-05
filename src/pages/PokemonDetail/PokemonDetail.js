@@ -8,6 +8,7 @@ import ProgressBar from "../../components/ProgressBar/ProgressBar";
 import typeToChipColorMapper from "../../components/chipColors";
 import typeToColorMapper from "../../components/colors";
 import Carousel from "react-bootstrap/Carousel";
+import { faVenus } from "@fortawesome/free-solid-svg-icons";
 
 const PokemonDetail = () => {
   const location = useLocation();
@@ -178,15 +179,35 @@ const PokemonDetail = () => {
               })}
           </div>
         </div>
-        <div className="description-container">
-          <h3>Descrição</h3>
-          <div>
-            Lorem ipsum dolor sit amet. Est minima autem in nobis rerum qui
-            consequatur accusamus eum consectetur dolore in autem laudantium qui
-            explicabo beatae. A architecto maiores et veritatis voluptates aut
-            ipsum quia eos fuga voluptatem rem quasi consequatur. Ea maxime
-            dolor quo Quis deserunt sed consectetur quibusdam.
+          <div className="stats-container" style={{ marginTop: 0 }}>
+            <div className="label-container">
+              <div className="progressLabel">Height</div>
+              <div className="circle">
+                <h3>{pokemon.height}</h3>
+              </div>
+            </div>
+            <div className="label-container">
+              <div className="progressLabel">Weight</div>
+              <div className="circle">
+                <h3>{pokemon.weight}</h3>
+              </div>
+            </div>
+            <div className="abilities-container">
+              <div className="progressLabel">Abilities</div>
+              <div className="pokemon-type">
+                {pokemon.abilities.map((ability, index) => {
+                  return (
+                    <div key={index} className="pokemon-chip" style={{backgroundColor: "#31241c6f"}}>
+                      <div className="pokemon-type-text">{ability.ability.name}</div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
+        <div className="weakness-container">
+          <div>Type</div>
+          <div>Weaknesses</div>
         </div>
       </div>
     </div>
