@@ -40,7 +40,7 @@ const PokemonFavorites = () => {
           })}
         </div>
       ) : (
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ display: "flex", flexDirection: "column", padding: "5%" }}>
           <div className="not-found">There are no favorite pokemons here</div>
           <FontAwesomeIcon className="sad-icon" icon={faFaceFrown} />
         </div>
