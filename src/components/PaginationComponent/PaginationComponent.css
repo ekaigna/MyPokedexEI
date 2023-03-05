@@ -1,0 +1,40 @@
+/* .item must be first */
+.item {
+    align-items: center;
+    color: #406264;
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+    height: 40px;
+    justify-content: center;
+    width: 40px;
+  }
+  
+  .disabled-page {
+    color: #808e9b;
+  }
+  
+  .active {
+    border: solid 1px #808e9b;
+    border-radius: 40px;
+    color: #808e9b;
+  }
+  
+  .break-me {
+  }
+
+  
+  .pagination {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    justify-content: flex-end;
+    list-style-type: none;
+    position: relative;
+  }
+  
+  .pagination-page {
+    font-weight: 700;
+  }

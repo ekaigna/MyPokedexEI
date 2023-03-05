@@ -8,11 +8,11 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [pokemons, setPokemons] = useState([]);
 
-  const itensPerPage = 24;
+  const itemsPerPage = 24;
   const fetchPokemons = async () => {
     try {
       setLoading(true);
-      const data = await getPokemons(itensPerPage, itensPerPage * page);
+      const data = await getPokemons(itemsPerPage, itemsPerPage * page);
       const promises = data.results.map(async (pokemon) => {
         return await getPokemonData(pokemon.url);
       });
@@ -20,7 +20,7 @@ const Home = () => {
       const results = await Promise.all(promises);
       setPokemons(results);
       setLoading(false);
-      setTotalPages(Math.ceil(data.count / itensPerPage));
+      setTotalPages(Math.ceil(data.count / itemsPerPage));
     } catch (error) {
       console.log("fetchPokemons error: ", error);
     }

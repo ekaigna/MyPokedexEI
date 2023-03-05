@@ -3,6 +3,7 @@ import Pokemon from "./Pokemon";
 import Pagination from "./Pagination";
 import { Link } from "react-router-dom";
 import HomeLoading from "./HomeLoading";
+import PaginationComponent from "./PaginationComponent/PaginationComponent";
 
 const Pokedex = (props) => {
   const { pokemons, loading, page, setPage, totalPages } = props;
@@ -22,11 +23,9 @@ const Pokedex = (props) => {
   return (
     <div>
       <div className="pokedex-header">
-        <Pagination
-          page={page + 1}
+        <PaginationComponent
           totalPages={totalPages}
-          onLeftClick={onLeftClickHandler}
-          onRightClick={onRightClickHandler}
+          setPage={setPage}
         />
       </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
