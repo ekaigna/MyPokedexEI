@@ -19,6 +19,7 @@ const PaginationComponent = (props) => {
 
   return (
     <div
+      id="pagination"
       style={{
         display: "flex",
         flexDirection: "column",
@@ -32,8 +33,8 @@ const PaginationComponent = (props) => {
         activeClassName={"item active "}
         breakClassName={"item break-me "}
         breakLabel="..."
-        containerClassName={'pagination'}
-        disabledClassName={'disabled-page'}
+        containerClassName={"pagination"}
+        disabledClassName={"disabled-page"}
         nextClassName={"item next "}
         nextLabel={
           <FontAwesomeIcon
@@ -45,7 +46,7 @@ const PaginationComponent = (props) => {
         pageRangeDisplayed={2}
         marginPagesDisplayed={2}
         pageCount={totalPages}
-        pageClassName={'item pagination-page '}
+        pageClassName={"item pagination-page "}
         previousClassName={"item previous"}
         previousLabel={
           <FontAwesomeIcon className="font-upload" icon={faCircleChevronLeft} />

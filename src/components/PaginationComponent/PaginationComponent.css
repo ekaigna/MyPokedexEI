@@ -14,7 +14,7 @@
     color: #808e9b;
   }
   
-  .active {
+  #pagination .active {
     border: solid 1px #808e9b;
     border-radius: 40px;
     color: #808e9b;

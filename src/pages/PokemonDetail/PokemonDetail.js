@@ -5,11 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import FavoriteContext from "../../contexts/favouritesContext";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
-import OwlCarousel from "react-owl-carousel";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
 import typeToChipColorMapper from "../../components/chipColors";
 import typeToColorMapper from "../../components/colors";
+import Carousel from "react-bootstrap/Carousel";
 
 const PokemonDetail = () => {
   const location = useLocation();
@@ -30,29 +28,6 @@ const PokemonDetail = () => {
     ? "#636d81fa"
     : "#636d8154";
 
-  const options = {
-    loop: true,
-    center: true,
-    items: 3,
-    margin: 0,
-    autoplay: true,
-    dots: true,
-    autoplayTimeout: 8500,
-    smartSpeed: 450,
-    nav: false,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      600: {
-        items: 3,
-      },
-      1000: {
-        items: 3,
-      },
-    },
-  };
-
   return (
     // <>
     // <Pokemon pokemon={pokemon} />
@@ -60,6 +35,96 @@ const PokemonDetail = () => {
     <div>
       <div className="detail-container">
         <div
+          className="pokemon-detail-image"
+          style={{
+            backgroundColor: typeToColorMapper[pokemon.types[0].type.name],
+          }}
+        >
+          <Carousel id="carousel">
+            {pokemon.sprites.front_default && (
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={pokemon.sprites.front_default}
+                  alt="First slide"
+                />
+              </Carousel.Item>
+            )}
+            {pokemon.sprites.back_default && (
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={pokemon.sprites.back_default}
+                  alt="Second slide"
+                />
+              </Carousel.Item>
+            )}
+            {pokemon.sprites.front_shiny && (
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={pokemon.sprites.front_shiny}
+                  alt="Second slide"
+                />
+              </Carousel.Item>
+            )}
+            {pokemon.sprites.back_shiny && (
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={pokemon.sprites.back_shiny}
+                  alt="Second slide"
+                />
+              </Carousel.Item>
+            )}
+            {pokemon.sprites.front_female && (
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={pokemon.sprites.front_female}
+                  alt="Second slide"
+                />
+              </Carousel.Item>
+            )}
+            {pokemon.sprites.back_female && (
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={pokemon.sprites.back_female}
+                  alt="Second slide"
+                />
+              </Carousel.Item>
+            )}
+            {pokemon.sprites.front_shiny_female && (
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={pokemon.sprites.front_shiny_female}
+                  alt="Second slide"
+                />
+              </Carousel.Item>
+            )}
+            {pokemon.sprites.back_shiny_female && (
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={pokemon.sprites.back_shiny_female}
+                  alt="Second slide"
+                />
+              </Carousel.Item>
+            )}
+          </Carousel>
+          <div className="favorite-detail">
+            <button onClick={onHeartClick}>
+              <FontAwesomeIcon
+                color={heart_color}
+                className="heart-icon-detail"
+                icon={faHeart}
+              />
+            </button>
+          </div>
+        </div>
+        {/* <div
           className="pokemon-detail-image"
           style={{
             backgroundColor: typeToColorMapper[pokemon.types[0].type.name],
@@ -91,8 +156,8 @@ const PokemonDetail = () => {
                 );
               })}
             </div>
-          </div>
-        </div>
+          </div>*/}
+
         <div className="pokemon-detail-description">
           <h3>{pokemon.name}</h3>
           <div className="progress-container">
@@ -114,34 +179,6 @@ const PokemonDetail = () => {
           </div>
         </div>
       </div>
-      {/* <OwlCarousel
-        id="customer-testimonoals"
-        className="owl-carousel owl-theme"
-        {...options}
-      >
-        {pokemon.sprites.length !== 0 && (
-          <>
-            <div className="item">
-              <div className="shadow-effect">
-                <img src={pokemon.sprites.back_default} />
-                <p>blabla</p>
-              </div>
-            </div>
-            <div className="item">
-              <div className="shadow-effect">
-                <img src={pokemon.sprites.back_default} />
-                <p>blabla</p>
-              </div>
-            </div>
-            <div className="item">
-              <div className="shadow-effect">
-                <img src={pokemon.sprites.back_default} />
-                <p>blabla</p>
-              </div>
-            </div>
-          </>
-        )}
-      </OwlCarousel> */}
     </div>
   );
 };

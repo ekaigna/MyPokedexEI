@@ -17,9 +17,6 @@
 }
 
 .pokemon-detail-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   /* background-color: #c4e3d4; */
   border-radius: 40px;
@@ -94,58 +91,52 @@
   font-size: medium;
   font-weight: 600;
 }
-/*************************************/
 
-.shadow-effect {
-  background: #fff;
-  padding: 20px;
-  border-radius: 4px;
-  text-align: center;
-  border: 1px solid #ececec;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.1), 0 15px 12px rgba(0, 0, 0, 0.02);
-}
-#shadow-effect p {
-  font-family: inherit;
-  font-size: 17px;
-  line-height: 1.5;
-  margin: 0 0 17px 0;
-  font-weight: 300;
-}
-#customer-testimonoals {
-  margin-top: 6%;
-}
-#customer-testimonoals .item {
-  text-align: center;
-  padding: 50px;
-  margin-bottom: 0px;
-  opacity: 0.2;
-  transform: scale3d(0.8, 0.8, 1);
-  transition: all 0.3s ease-in-out;
-}
-#customer-testimonoals .owl-item.active.center .item {
-  opacity: 1;
-  transform: scale3d(1, 1, 1);
-}
-/*.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-    background: #56423D;
-    transform: translate3d(0px, -50%, 0px) scale(0.8);
-  }
 
-   .owl-carousel .owl-dots {
-    display: inline-block;
-    width: 100%;
+/******************************************/
+
+.carousel-item {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  backface-visibility: hidden;
+  transition: transform .6s ease-in-out;
+  height: 300px;
+}
+
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* #carousel .active {
+  border-radius: 40px;
+  background-color: aquamarine;
+} */
+
+.w-100 {
+  width: 300px !important;
+  height: 300px;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    padding: 0;
+    color: #fff;
     text-align: center;
-  }
-  .owl-carousel .owl-dots .owl-dot{ 
-    display: inline-block;
-  }
-  .owl-carousel .owl-dots .owl-dot span{ 
-    background: #56423D;
-    display: inline-block;
-    height: 20px;
-    width: 20px;
-    margin: 0 2px 5px;
-    transform: translate3d(0px, -50%, 0px) scale(0.3);
-    transform-origin: 50% 50% 0;
-    transition: all 250ms ease-out 0s;
-  }  */
+    background: 0 0;
+    border: 0;
+    opacity: .5;
+    transition: opacity .15s ease;
+    height: 15%;
+    transform: translateY(-50%);
+}
