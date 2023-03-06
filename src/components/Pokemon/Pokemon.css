@@ -72,7 +72,7 @@
   }
   
   .pokemon-type-text {
-    text-transform: lowercase;
+    text-transform: capitalize;
     color: #ffffffde;
     font-size: small;
   }

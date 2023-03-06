@@ -12,7 +12,7 @@ const Home = () => {
   const [pokemons, setPokemons] = useState([]);
 
   //Items per page showed in pokedex
-  const itemsPerPage = 24;
+  const itemsPerPage = 12;
 
   useEffect(() => {
 
