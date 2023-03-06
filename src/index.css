@@ -60,15 +60,15 @@ html {
   display: flex;
   border-radius: 20px;
   flex-direction: column;
-  /* background-color: #c4e3d4; */
+  background-color: var(--background-color);
   padding: 15px;
   width: 230px;
   height: 320px;
 }
 
 .pokemon-card:hover {
-  background-color: #b3dbc7;
-}
+  background-color: var(--hover-color);
+} 
 
 .pokemon-image {
   height: 200px;

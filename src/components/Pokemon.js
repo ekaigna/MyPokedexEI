@@ -24,14 +24,19 @@ const Pokemon = (props) => {
   return (
     <div
       className="pokemon-card"
-      style={{ backgroundColor: typeToColorMapper[pokemon.types[0].type.name]}}
+      style={{
+        "--background-color": typeToColorMapper[pokemon.types[0].type.name],
+        "--hover-color": typeToChipColorMapper[pokemon.types[0].type.name]
+      }}
     >
       <div className="pokemon-image-container">
-        {pokemon.sprites.front_default && <img
-          alt={pokemon.name}
-          src={pokemon.sprites.front_default}
-          className="pokemon-image"
-        />}
+        {pokemon.sprites.front_default && (
+          <img
+            alt={pokemon.name}
+            src={pokemon.sprites.front_default}
+            className="pokemon-image"
+          />
+        )}
         {location.pathname !== "/" ? (
           <div className="favorite">
             <button onClick={onHeartClick}>
@@ -55,7 +60,13 @@ const Pokemon = (props) => {
           <div className="pokemon-type">
             {pokemon.types.map((type, index) => {
               return (
-                <div key={index} className="pokemon-chip" style={{backgroundColor: typeToChipColorMapper[type.type.name]}}>
+                <div
+                  key={index}
+                  className="pokemon-chip"
+                  style={{
+                    backgroundColor: typeToChipColorMapper[type.type.name],
+                  }}
+                >
                   <div className="pokemon-type-text">{type.type.name}</div>
                 </div>
               );

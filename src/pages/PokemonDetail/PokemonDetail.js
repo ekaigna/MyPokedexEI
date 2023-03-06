@@ -5,10 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import FavoriteContext from "../../contexts/favouritesContext";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
-import typeToChipColorMapper from "../../components/chipColors";
 import typeToColorMapper from "../../components/colors";
 import Carousel from "react-bootstrap/Carousel";
-import { faVenus } from "@fortawesome/free-solid-svg-icons";
 
 const PokemonDetail = () => {
   const location = useLocation();
@@ -26,7 +24,6 @@ const PokemonDetail = () => {
   };
 
   const pokemon_color = typeToColorMapper[pokemon.types[0].type.name];
-  const dark_pokemon_color = typeToChipColorMapper[pokemon.types[0].type.name];
 
   const heart_color = favoritePokemonNames.includes(pokemon.name)
     ? "#636d81fa"
@@ -150,23 +147,23 @@ const PokemonDetail = () => {
               })}
           </div>
         </div>
-        <div className="stats-container" style={{ marginTop: 0 }}>
+        <div className="stats-container" style={{ marginTop: 0, "--pokemon-color": pokemon_color}}>
           <div className="label-container">
             <div className="progressLabel">Height</div>
-            <div className="circle" style={{borderColor: pokemon_color}}>
-              <h3 style={{color: pokemon_color}}>{pokemon.height}</h3>
+            <div className="circle">
+              <h3>{pokemon.height}</h3>
             </div>
           </div>
           <div className="label-container">
             <div className="progressLabel">Weight</div>
-            <div className="circle" style={{borderColor: pokemon_color}}>
-              <h3 style={{color: pokemon_color}}>{pokemon.weight}</h3>
+            <div className="circle">
+              <h3>{pokemon.weight}</h3>
             </div>
           </div>
           <div className="label-container">
             <div className="progressLabel">Experience</div>
-            <div className="circle" style={{borderColor: pokemon_color}}>
-              <h3 style={{color: pokemon_color}}>{pokemon.base_experience}</h3>
+            <div className="circle">
+              <h3>{pokemon.base_experience}</h3>
             </div>
           </div>
         </div>
