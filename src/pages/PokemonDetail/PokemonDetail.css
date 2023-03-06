@@ -206,7 +206,7 @@
   text-align: center;
 }
 
-.pokemon-type .pokemon-chip {
+.abilities-container .pokemon-type .pokemon-chip {
   display: flex;
   padding: 10px;
   align-items: center;

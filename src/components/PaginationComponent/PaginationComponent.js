@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
 import ReactPaginate from "react-paginate";
 import "./PaginationComponent.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
