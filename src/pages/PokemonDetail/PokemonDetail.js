@@ -30,9 +30,6 @@ const PokemonDetail = () => {
     : "#636d8154";
 
   return (
-    // <>
-    // <Pokemon pokemon={pokemon} />
-    // </>
     <div className="detail-container">
       <div className="detail-grid-container">
         <div

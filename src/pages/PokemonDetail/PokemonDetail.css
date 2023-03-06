@@ -1,3 +1,8 @@
+.detail-container {
+  display: flex;
+  justify-content: center;
+}
+
 .detail-grid-container {
   display: grid;
   height: 100vh;
@@ -30,6 +35,12 @@
   .detail-grid-container {
     padding: 10px;
   }
+}
+
+.carousel {
+  width: 300px;
+  height: 300px;
+  margin: auto;
 }
 
 .pokemon-detail-image {
