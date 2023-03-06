@@ -44,7 +44,7 @@ const Pokemon = (props) => {
           />
         )}
         {/* using favorite icon only on detail page */}
-        {location.pathname !== "/" ? (
+        {location.pathname === "/pokemonDetail/:name" ? (
           <div className="favorite">
             <button onClick={onHeartClick}>
               <FontAwesomeIcon

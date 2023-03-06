@@ -6,6 +6,7 @@ import { faFaceFrown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./PokemonFavorites.css";
 import HomeLoading from "../../components/HomeLoading";
+import { Link } from "react-router-dom";
 
 const PokemonFavorites = () => {
   const { favoritePokemonNames } = useContext(FavoriteContext);
@@ -45,7 +46,15 @@ const PokemonFavorites = () => {
       {favoritePokemons && favoritePokemons.length > 0 && (
         <div className="pokedex-grid">
           {favoritePokemons.map((pokemon, index) => {
-            return <Pokemon key={index} pokemon={pokemon} />;
+            return (
+              <Link
+                style={{ textDecoration: "none" }}
+                to={`/pokemonDetail/${pokemon.name}`}
+                state={{ pokemon }}
+              >
+                <Pokemon key={index} pokemon={pokemon} />
+              </Link>
+            );
           })}
         </div>
       )}
