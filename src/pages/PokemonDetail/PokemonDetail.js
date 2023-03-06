@@ -25,6 +25,9 @@ const PokemonDetail = () => {
     return stat.replace("-", " ");
   };
 
+  const pokemon_color = typeToColorMapper[pokemon.types[0].type.name];
+  const dark_pokemon_color = typeToChipColorMapper[pokemon.types[0].type.name];
+
   const heart_color = favoritePokemonNames.includes(pokemon.name)
     ? "#636d81fa"
     : "#636d8154";
@@ -38,7 +41,7 @@ const PokemonDetail = () => {
         <div
           className="pokemon-detail-image"
           style={{
-            backgroundColor: typeToColorMapper[pokemon.types[0].type.name],
+            backgroundColor: pokemon_color,
           }}
         >
           <Carousel id="carousel">
@@ -125,39 +128,6 @@ const PokemonDetail = () => {
             </button>
           </div>
         </div>
-        {/* <div
-          className="pokemon-detail-image"
-          style={{
-            backgroundColor: typeToColorMapper[pokemon.types[0].type.name],
-          }}
-        >
-          <img alt={pokemon.name} src={pokemon.sprites.front_default} />
-          <div className="favorite-detail">
-            <button onClick={onHeartClick}>
-              <FontAwesomeIcon
-                color={heart_color}
-                className="heart-icon-detail"
-                icon={faHeart}
-              />
-            </button>
-          </div>
-          <div className="chip-container">
-            <div className="pokemon-type">
-              {pokemon.types.map((type, index) => {
-                return (
-                  <div
-                    key={index}
-                    className="pokemon-chip-detail"
-                    style={{
-                      backgroundColor: typeToChipColorMapper[type.type.name],
-                    }}
-                  >
-                    <div className="detail-type-text">{type.type.name}</div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>*/}
 
         <div className="pokemon-detail-description">
           <h3>{pokemon.name}</h3>
@@ -171,7 +141,8 @@ const PokemonDetail = () => {
                     visualParts={[
                       {
                         percentage: stat.base_stat,
-                        color: "tan",
+                        color: pokemon_color
+                        ,
                       },
                     ]}
                   />
@@ -179,35 +150,61 @@ const PokemonDetail = () => {
               })}
           </div>
         </div>
-          <div className="stats-container" style={{ marginTop: 0 }}>
-            <div className="label-container">
-              <div className="progressLabel">Height</div>
-              <div className="circle">
-                <h3>{pokemon.height}</h3>
-              </div>
+        <div className="stats-container" style={{ marginTop: 0 }}>
+          <div className="label-container">
+            <div className="progressLabel">Height</div>
+            <div className="circle" style={{borderColor: pokemon_color}}>
+              <h3 style={{color: pokemon_color}}>{pokemon.height}</h3>
             </div>
-            <div className="label-container">
-              <div className="progressLabel">Weight</div>
-              <div className="circle">
-                <h3>{pokemon.weight}</h3>
-              </div>
+          </div>
+          <div className="label-container">
+            <div className="progressLabel">Weight</div>
+            <div className="circle" style={{borderColor: pokemon_color}}>
+              <h3 style={{color: pokemon_color}}>{pokemon.weight}</h3>
             </div>
-            <div className="abilities-container">
-              <div className="progressLabel">Abilities</div>
+          </div>
+          <div className="label-container">
+            <div className="progressLabel">Experience</div>
+            <div className="circle" style={{borderColor: pokemon_color}}>
+              <h3 style={{color: pokemon_color}}>{pokemon.base_experience}</h3>
+            </div>
+          </div>
+        </div>
+        <div className="stats-container" style={{ marginTop: 0 }}>
+          <div className="abilities-container">
+            <div className="progressLabel">Abilities</div>
+            <div className="pokemon-type">
+              {pokemon.abilities.map((ability, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="pokemon-chip"
+                    style={{ backgroundColor: pokemon_color }}
+                  >
+                    <div className="pokemon-type-text">
+                      {changeAPIStat(ability.ability.name)}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className="abilities-container">
+              <div className="progressLabel">Type</div>
               <div className="pokemon-type">
-                {pokemon.abilities.map((ability, index) => {
+                {pokemon.types.map((type, index) => {
                   return (
-                    <div key={index} className="pokemon-chip" style={{backgroundColor: "#31241c6f"}}>
-                      <div className="pokemon-type-text">{ability.ability.name}</div>
+                    <div
+                      key={index}
+                      className="pokemon-chip"
+                      style={{ backgroundColor: pokemon_color }}
+                    >
+                      <div className="pokemon-type-text">{type.type.name}</div>
                     </div>
                   );
                 })}
-              </div>
             </div>
           </div>
-        <div className="weakness-container">
-          <div>Type</div>
-          <div>Weaknesses</div>
         </div>
       </div>
     </div>

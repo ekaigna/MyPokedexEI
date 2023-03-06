@@ -21,6 +21,8 @@
       "image-detail stats"
       "description weakness";
     gap: 2rem;
+    padding: 25%;
+    padding-top: 4%;
   }
 }
 
@@ -42,7 +44,7 @@
   text-transform: capitalize;
   font-size: 50px;
   letter-spacing: 4px;
-  color: #59878a;
+  color: #6f7474;
 }
 
 .progress-container {
@@ -140,6 +142,12 @@
 .label-container {
   align-self: center;
   justify-self: center;
+  margin: 10px;
+  align-items: center;
+  justify-items: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .abilities-container {
@@ -153,7 +161,7 @@
 .stats-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   background-color: #f9d2ba30;
   border-radius: 30px;
   padding: 20px;
@@ -162,8 +170,12 @@
 @media (min-width: 500px) {
   .stats-container {
     flex-direction: row;
-  }}
+  }
+}
 
+.label-container progressLabel {
+  text-align: center;
+}
 
 /******************************************/
 
