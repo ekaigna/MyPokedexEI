@@ -243,3 +243,7 @@ button {
   font-size: 72px;
   margin-top: 20px;
 }
+
+.navbar-collapse {
+  margin-top: 10px;
+}

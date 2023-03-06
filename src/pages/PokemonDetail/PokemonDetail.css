@@ -130,6 +130,7 @@
   border-radius: 40px;
   margin-top: 5px;
   margin-bottom: 20px;
+  padding: 30px;
 }
 
 .circle h3 {
@@ -170,11 +171,21 @@
 @media (min-width: 500px) {
   .stats-container {
     flex-direction: row;
+    height: 170px;
   }
 }
 
 .label-container progressLabel {
   text-align: center;
+}
+
+.abilities-container .pokemon-type {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.pokemon-chip .pokemon-type-text {
+  text-align:center;
 }
 
 /******************************************/
