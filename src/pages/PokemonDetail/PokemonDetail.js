@@ -36,8 +36,8 @@ const PokemonDetail = () => {
     // <>
     // <Pokemon pokemon={pokemon} />
     // </>
-    <div>
-      <div className="detail-container">
+    <div className="detail-container">
+      <div className="detail-grid-container">
         <div
           className="pokemon-detail-image"
           style={{

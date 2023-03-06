@@ -1,4 +1,4 @@
-.detail-container {
+.detail-grid-container {
   display: grid;
   height: 100vh;
   grid-template-columns: 1fr;
@@ -14,7 +14,7 @@
 }
 
 @media (min-width: 900px) {
-  .detail-container {
+  .detail-grid-container {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
@@ -23,6 +23,12 @@
     gap: 2rem;
     padding: 25%;
     padding-top: 4%;
+  }
+}
+
+@media (max-width: 360px) {
+  .detail-grid-container {
+    padding: 10px;
   }
 }
 
@@ -185,7 +191,14 @@
 }
 
 .pokemon-chip .pokemon-type-text {
-  text-align:center;
+  text-align: center;
+}
+
+.pokemon-type .pokemon-chip {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 /******************************************/
