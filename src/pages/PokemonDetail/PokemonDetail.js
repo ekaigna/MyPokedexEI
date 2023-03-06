@@ -126,7 +126,7 @@ const PokemonDetail = () => {
         <div className="pokemon-detail-description">
           <h3>{pokemon.name}</h3>
           <div className="progress-container">
-            {pokemon &&
+            {pokemon && pokemon.stats &&
               pokemon.stats.map((stat, index) => {
                 return (
                   <ProgressBar
@@ -145,27 +145,29 @@ const PokemonDetail = () => {
           </div>
         </div>
         <div className="stats-container" style={{ marginTop: 0, "--pokemon-color": pokemon_color}}>
+          {pokemon.height &&
           <div className="label-container">
             <div className="progressLabel">Height</div>
             <div className="circle">
               <h3>{pokemon.height}</h3>
             </div>
-          </div>
-          <div className="label-container">
+          </div>}
+          {pokemon.weight && <div className="label-container">
             <div className="progressLabel">Weight</div>
             <div className="circle">
               <h3>{pokemon.weight}</h3>
             </div>
-          </div>
+          </div>}
+          {pokemon.base_experience && 
           <div className="label-container">
             <div className="progressLabel">Experience</div>
             <div className="circle">
               <h3>{pokemon.base_experience}</h3>
             </div>
-          </div>
+          </div>}
         </div>
         <div className="stats-container" style={{ marginTop: 0 }}>
-          <div className="abilities-container">
+          {pokemon.abilities && <div className="abilities-container">
             <div className="progressLabel">Abilities</div>
             <div className="pokemon-type">
               {pokemon.abilities.map((ability, index) => {
@@ -182,8 +184,8 @@ const PokemonDetail = () => {
                 );
               })}
             </div>
-          </div>
-          <div className="abilities-container">
+          </div>}
+          {pokemon.types && <div className="abilities-container">
               <div className="progressLabel">Type</div>
               <div className="pokemon-type">
                 {pokemon.types.map((type, index) => {
@@ -198,7 +200,7 @@ const PokemonDetail = () => {
                   );
                 })}
             </div>
-          </div>
+          </div>}
         </div>
       </div>
     </div>

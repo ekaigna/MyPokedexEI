@@ -38,9 +38,19 @@
 }
 
 .carousel {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 500px) {
+  .carousel {
+    width: 400px;
+    height: 350px;
+  }
 }
 
 .pokemon-detail-image {
@@ -52,8 +62,6 @@
 
 .pokemon-detail-image img {
   object-fit: cover;
-  width: 200px;
-  height: 200px;
 }
 
 .pokemon-detail-description h3 {
@@ -189,7 +197,7 @@
 @media (min-width: 500px) {
   .stats-container {
     flex-direction: row;
-    height: 170px;
+    /* height: 170px; */
   }
 }
 
@@ -239,9 +247,8 @@
   background-color: aquamarine;
 } */
 
-.w-100 {
-  width: 300px !important;
-  height: 300px;
+.carousel-inner {
+  padding: 45px;
 }
 
 .carousel-control-next,
