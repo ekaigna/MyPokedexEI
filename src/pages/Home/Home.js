@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getPokemonData, getPokemons } from "../../api";
-import Pokedex from "../../components/Pokedex";
+import Pokedex from "../../components/Pokedex/Pokedex";
+import "./Home.css"
 
 const Home = () => {
   const [page, setPage] = useState(0);

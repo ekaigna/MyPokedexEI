@@ -22,7 +22,6 @@
   
   .break-me {
   }
-
   
   .pagination {
     align-items: center;
@@ -38,3 +37,16 @@
   .pagination-page {
     font-weight: 700;
   }
+
+  .font-upload {
+    color: #c4e3d4;
+  }
+
+  .upload-icon {
+    margin: 5px;
+  }
+
+  .upload-icon:hover .font-upload {
+    color: #406264;
+  }
+  

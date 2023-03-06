@@ -1,9 +1,9 @@
 import React from "react";
-import Pokemon from "./Pokemon";
-import Pagination from "./Pagination";
+import Pokemon from "../Pokemon/Pokemon";
 import { Link } from "react-router-dom";
-import HomeLoading from "./HomeLoading";
-import PaginationComponent from "./PaginationComponent/PaginationComponent";
+import HomeLoading from "../HomeLoading";
+import PaginationComponent from "../PaginationComponent/PaginationComponent";
+import "./Pokedex.css"
 
 const Pokedex = (props) => {
   const { pokemons, loading, setPage, totalPages } = props;

@@ -1,0 +1,32 @@
+.not-found {
+  text-transform: uppercase;
+  color: #90bfc2;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.pokedex-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.6%;
+}
+
+@media (min-width: 600px) {
+  .pokedex-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .pokedex-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.sad-icon {
+    color: #90bfc2;
+    font-size: 72px;
+    margin-top: 20px;
+  }

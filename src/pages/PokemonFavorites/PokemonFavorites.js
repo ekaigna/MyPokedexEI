@@ -1,10 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
 import FavoriteContext from "../../contexts/favouritesContext";
 import { Link } from "react-router-dom";
-import Pokemon from "../../components/Pokemon";
+import Pokemon from "../../components/Pokemon/Pokemon";
 import { getPokemon } from "../../api";
 import { faFaceFrown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./PokemonFavorites.css"
 
 const PokemonFavorites = () => {
   const { favoritePokemonNames } = useContext(FavoriteContext);
@@ -13,7 +14,6 @@ const PokemonFavorites = () => {
 
   const fetchFavoritePokemons = async () => {
     try {
-      console.log("favouriteNames", favoritePokemonNames);
       setLoading(true);
       const promises = favoritePokemonNames.map(async (name) => {
         return await getPokemon(name);

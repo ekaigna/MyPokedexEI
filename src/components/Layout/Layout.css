@@ -1,0 +1,22 @@
+.color-nav {
+  background-color: #f5fbfb;
+  padding: 20px !important;
+}
+
+.nav-link {
+  color: #2e3056 !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  padding-right: 30px !important;
+  padding-left: 30px !important;
+  font-size: large !important;
+}
+
+.navbar-brand {
+  padding-right: 30px !important;
+  padding-left: 15px !important;
+}
+
+.navbar-collapse {
+  margin-top: 10px;
+}

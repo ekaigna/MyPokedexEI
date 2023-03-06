@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-import FavoriteContext from "../contexts/favouritesContext";
+import FavoriteContext from "../../contexts/favouritesContext";
 import { useLocation } from "react-router-dom";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import typeToColorMapper from "./colors";
-import typeToChipColorMapper from "./chipColors";
+import typeToColorMapper from "../colors";
+import typeToChipColorMapper from "../chipColors";
+import "./Pokemon.css";
 
 const Pokemon = (props) => {
   const { pokemon } = props;
@@ -17,6 +18,10 @@ const Pokemon = (props) => {
     updateFavoritePokemons(pokemon.name);
   };
 
+  const pokemon_color = typeToColorMapper[pokemon.types[0].type.name];
+  const chip_pokemon_color = typeToChipColorMapper[pokemon.types[0].type.name];
+
+
   const heart_color = favoritePokemonNames.includes(pokemon.name)
     ? "#406264"
     : "#65979a";
@@ -25,8 +30,8 @@ const Pokemon = (props) => {
     <div
       className="pokemon-card"
       style={{
-        "--background-color": typeToColorMapper[pokemon.types[0].type.name],
-        "--hover-color": typeToChipColorMapper[pokemon.types[0].type.name]
+        "--pokemon-color": pokemon_color,
+        "--chip-color": chip_pokemon_color
       }}
     >
       <div className="pokemon-image-container">
@@ -47,10 +52,7 @@ const Pokemon = (props) => {
               />
             </button>
           </div>
-        ) : // <div className="pokemon-id">
-        //   <div className="id-text">{pokemon.id}</div>
-        // </div>
-        null}
+        ) : null}
       </div>
       <div className="pokemon-card-body">
         <div className="card-top">
@@ -64,7 +66,7 @@ const Pokemon = (props) => {
                   key={index}
                   className="pokemon-chip"
                   style={{
-                    backgroundColor: typeToChipColorMapper[type.type.name],
+                    backgroundColor: typeToChipColorMapper[type.type.name]
                   }}
                 >
                   <div className="pokemon-type-text">{type.type.name}</div>
