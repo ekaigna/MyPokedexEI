@@ -7,26 +7,20 @@ import {
   faCircleChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
+//This component is used to apply pagination in the list of Pokémons.
+
 const PaginationComponent = (props) => {
   const { totalPages, setPage } = props;
 
-  // Invoke when user click to request another page.
+  // Invoke when user click to request another page and change the state of the page.
   const handlePageClick = (event) => {
     setPage(event.selected);
-    console.log(`User requested page number ${event.selected}`);
   };
 
   return (
     <div
       id="pagination"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        boxSizing: "border-box",
-        width: "100%",
-        height: "100%",
-      }}
+      className="pagination-container"
     >
       <ReactPaginate
         activeClassName={"item active "}

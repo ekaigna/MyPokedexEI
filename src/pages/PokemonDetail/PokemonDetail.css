@@ -221,7 +221,7 @@
   justify-content: center;
 }
 
-/******************************************/
+/************CAROUSEL******************************/
 
 .carousel-item {
   position: relative;
@@ -241,11 +241,6 @@
   justify-content: center;
   align-items: center;
 }
-
-/* #carousel .active {
-  border-radius: 40px;
-  background-color: aquamarine;
-} */
 
 .carousel-inner {
   padding: 45px;

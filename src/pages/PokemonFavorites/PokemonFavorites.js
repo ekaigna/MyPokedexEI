@@ -13,6 +13,7 @@ const PokemonFavorites = () => {
   const [favoritePokemons, setFavoritePokemons] = useState([]);
 
   useEffect(() => {
+    //async function used to retrieve all favorite pokemons from local storage
     const fetchFavoritePokemons = async () => {
       try {
         const promises = favoritePokemonNames.map(async (name) => {
@@ -30,7 +31,7 @@ const PokemonFavorites = () => {
   }, [favoritePokemonNames]);
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", marginTop: 60 }}>
+    <div className="favorite-container">
       {loading && (
         <div className="pokedex-grid">
           <HomeLoading />
@@ -48,10 +49,9 @@ const PokemonFavorites = () => {
           })}
         </div>
       )}
+      {/* in case there are no favorite pokemons */}
       {!loading && favoritePokemons.length === 0 && (
-        <div
-          style={{ display: "flex", flexDirection: "column", padding: "5%" }}
-        >
+        <div className="not-found-container">
           <div className="not-found">There are no favorite pokemons here</div>
           <FontAwesomeIcon className="sad-icon" icon={faFaceFrown} />
         </div>

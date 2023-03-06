@@ -15,33 +15,36 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 export default function App() {
 
+  //local storage key to retrieve a list of favorite pokemons' names
   const favoritesKey = "f";
   const [favorites, setFavorites] = useState([]);
 
-  const loadFavoritePokemons = () => {
+  useEffect(() => {
+    //function used to retrieve a list of favorite pokemons' names from local storage
     const pokemons =
     JSON.parse(window.localStorage.getItem(favoritesKey)) || [];
     setFavorites(pokemons);
-  };
-
-  useEffect(() => {
-    loadFavoritePokemons();
   }, []);
 
   const updateFavoritePokemons = (name) => {
+    //function used to update a list of favorite pokemons' names in local storage
     const updatedFavorites = [...favorites];
     const favoriteIndex = favorites.indexOf(name);
+    //delete a pokemon name if it is already in the list
     if (favoriteIndex >= 0) {
       updatedFavorites.splice(favoriteIndex, 1);
     } else {
+      //add a pokemon name if it is not in the list
       updatedFavorites.push(name);
     }
+    //add final list to local storage
     window.localStorage.setItem(favoritesKey, JSON.stringify(updatedFavorites));
     setFavorites(updatedFavorites);
   };
 
   return (
     <BrowserRouter>
+    {/* context provider */}
       <FavoriteProvider
         value={{
           favoritePokemonNames: favorites,
@@ -66,7 +69,4 @@ export default function App() {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

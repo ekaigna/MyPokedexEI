@@ -1,8 +1,21 @@
+.favorite-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
 .not-found {
   text-transform: uppercase;
   color: #90bfc2;
   font-size: xx-large;
   font-weight: bold;
+  text-align: center;
 }
 
 .pokedex-grid {

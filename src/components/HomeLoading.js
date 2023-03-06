@@ -1,6 +1,8 @@
 import React from 'react'
 import ContentLoader from 'react-content-loader'
 
+//This component is used to imitate card loading.
+
 const HomeLoading = props => (
   <ContentLoader
     width={230}

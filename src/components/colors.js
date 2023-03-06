@@ -1,3 +1,5 @@
+//This function is mapping the colors accordinly to the pokemon type. 
+
 const typeToColorMapper = {
     "normal": "#C6C199",
     "grass": "#B0DC9A",

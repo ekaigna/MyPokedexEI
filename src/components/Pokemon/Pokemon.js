@@ -7,6 +7,8 @@ import typeToColorMapper from "../colors";
 import typeToChipColorMapper from "../chipColors";
 import "./Pokemon.css";
 
+//This component is used to render pokemon card
+
 const Pokemon = (props) => {
   const { pokemon } = props;
   const { favoritePokemonNames, updateFavoritePokemons } =
@@ -18,10 +20,9 @@ const Pokemon = (props) => {
     updateFavoritePokemons(pokemon.name);
   };
 
+  //colors used
   const pokemon_color = typeToColorMapper[pokemon.types[0].type.name];
   const chip_pokemon_color = typeToChipColorMapper[pokemon.types[0].type.name];
-
-
   const heart_color = favoritePokemonNames.includes(pokemon.name)
     ? "#406264"
     : "#65979a";
@@ -42,6 +43,7 @@ const Pokemon = (props) => {
             className="pokemon-image"
           />
         )}
+        {/* using favorite icon only on detail page */}
         {location.pathname !== "/" ? (
           <div className="favorite">
             <button onClick={onHeartClick}>
@@ -56,10 +58,11 @@ const Pokemon = (props) => {
       </div>
       <div className="pokemon-card-body">
         <div className="card-top">
-          <h3> {pokemon.name}</h3>
+          <h3>{pokemon.name}</h3>
         </div>
         <div className="card-bottom">
           <div className="pokemon-type">
+            {/* chips to show pokemon types */}
             {pokemon.types.map((type, index) => {
               return (
                 <div

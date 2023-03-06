@@ -1,3 +1,6 @@
+//This function is mapping the chip colors accordinly to the pokemon type. This colors has
+//more intensity and are darker than type colors.
+
 const typeToChipColorMapper = {
     "normal": "#AAA67F",
     "grass": "#74CB48",

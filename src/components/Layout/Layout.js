@@ -4,6 +4,8 @@ import Navbar from "react-bootstrap/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Layout.css'
 
+//This component is used as Navigation Bar to navigate between Home and Favorite Pages
+
 const Layout = () => {
   return (
     <>

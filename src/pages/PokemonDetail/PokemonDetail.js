@@ -12,19 +12,21 @@ const PokemonDetail = () => {
   const location = useLocation();
   const { pokemon } = location.state;
 
+  //to retrive list of favorite pokemons' names)
   const { favoritePokemonNames, updateFavoritePokemons } =
     useContext(FavoriteContext);
 
+  //to update list of pokemons on click
   const onHeartClick = () => {
     updateFavoritePokemons(pokemon.name);
   };
-
+  //format API stats to be more user friendly
   const changeAPIStat = (stat) => {
     return stat.replace("-", " ");
   };
 
+  //colors used
   const pokemon_color = typeToColorMapper[pokemon.types[0].type.name];
-
   const heart_color = favoritePokemonNames.includes(pokemon.name)
     ? "#636d81fa"
     : "#636d8154";
@@ -38,6 +40,7 @@ const PokemonDetail = () => {
             backgroundColor: pokemon_color,
           }}
         >
+          {/* carousel to show all pokemon images */}
           <Carousel id="carousel">
             {pokemon.sprites.front_default && (
               <Carousel.Item>
@@ -112,6 +115,7 @@ const PokemonDetail = () => {
               </Carousel.Item>
             )}
           </Carousel>
+          {/* heart icon to be able to favorite pokemon */}
           <div className="favorite-detail">
             <button onClick={onHeartClick}>
               <FontAwesomeIcon
@@ -126,6 +130,7 @@ const PokemonDetail = () => {
         <div className="pokemon-detail-description">
           <h3>{pokemon.name}</h3>
           <div className="progress-container">
+            {/* progress bar to visualize pokemon's stats */}
             {pokemon && pokemon.stats &&
               pokemon.stats.map((stat, index) => {
                 return (
@@ -144,6 +149,7 @@ const PokemonDetail = () => {
               })}
           </div>
         </div>
+        {/* different pokemon's characteristics  */}
         <div className="stats-container" style={{ marginTop: 0, "--pokemon-color": pokemon_color}}>
           {pokemon.height &&
           <div className="label-container">

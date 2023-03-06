@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./ProgressBar.css";
 
+//This component is used to show progress using animated progress bar. It receives label, 
+//background color of bar, progress percentage(s) and bar color. It has possibility to show
+//more than one percentage's fraction, however, in this project, only one is used.
+
+
 const ProgressBar = ({
   label,
   backgroundColor = "#e5e5e5",
@@ -18,6 +23,7 @@ const ProgressBar = ({
   );
 
   useEffect(() => {
+    //mapping of percentages
     requestAnimationFrame(() => {
       setWidths(
         visualParts.map(item => {
@@ -36,6 +42,7 @@ const ProgressBar = ({
           backgroundColor
         }}
       >
+        {/* mapping and animating diferent percentages */}
         {visualParts.map((item, index) => {
           return (
             <div
