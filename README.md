@@ -21,8 +21,7 @@ of them).
 ## Technical requirements
 
 7. This application was implemented in ReactJS.
-8. To get the list of Pókemons and their details, the PokéAPI: https://pokeapi.co/ was used (see
-documentation for more details).
+8. To get the list of Pókemons and their details, the PokéAPI: https://pokeapi.co/ was used.
 9. The local storage was used to handle the list of favorite Pokémons.
 10. React Bootstrap was chosen as a primary UI framework .
 11. The app is responsive and adapts UI by displaying it in different screen sizes (web and mobile).
@@ -31,16 +30,16 @@ documentation for more details).
 
 ## Addicional requirements
 
-This app used React Bootstrap Carousel, React Paginate and React Content Loader. Addionally, React Hooks such as useEffect, useState (state management) and useContext were implemented in this app. To navigate between pages, React Router was used. 
+This app uses React Bootstrap Carousel, React Paginate and React Content Loader. Addionally, React Hooks such as useEffect, useState (state management) and useContext are implemented in this app. The navigation between pages is guaranteed by React Router.
 
 ## Technologies
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-The main technology used for the Pokedex app was React - a JavaScript library for building user interfaces, also using PokéAPI: https://pokeapi.co/.
+The main technology used for the Pokedex app was React - a JavaScript library for building user interfaces, also implementing PokéAPI: https://pokeapi.co/.
 
 ## Instalation steps
 
-In the project directory, the used can run:
+In the project directory, the user can run:
 
 ### `npm start`
 
