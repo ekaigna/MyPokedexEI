@@ -9,7 +9,7 @@ import './Layout.css'
 const Layout = () => {
   return (
     <>
-      <Navbar className="color-nav" expand="lg">
+      <Navbar bg="dark" variant="dark" className="color-nav" expand="lg">
         <Navbar.Brand as={Link} to="/">
           <img
             alt="logo"

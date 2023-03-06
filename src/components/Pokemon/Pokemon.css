@@ -90,3 +90,8 @@
   .heart-icon {
     font-size: 25px;
   }
+
+  .pokedex-container {
+    display: flex;
+    justify-content: center;
+  }

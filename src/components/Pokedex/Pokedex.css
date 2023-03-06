@@ -1,6 +1,7 @@
 .pokedex-header {
     display: flex;
     justify-content: flex-end;
+    margin-top: 1.6%;
   }
   
   .pokedex-grid {

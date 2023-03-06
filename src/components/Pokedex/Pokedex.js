@@ -16,10 +16,10 @@ const Pokedex = (props) => {
       <div className="pokedex-header">
         <PaginationComponent totalPages={totalPages} setPage={setPage} />
       </div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div className="pokedex-container">
         {/* card content loader */}
         {loading ? (
-          <div className="pokedex-grid">
+          <div className="pokedex-grid" style={{marginTop: "1.6%"}}>
             <HomeLoading />
             <HomeLoading />
             <HomeLoading />

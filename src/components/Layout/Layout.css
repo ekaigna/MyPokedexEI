@@ -1,10 +1,8 @@
 .color-nav {
   background-color: #f5fbfb;
-  padding: 20px !important;
 }
 
 .nav-link {
-  color: #2e3056 !important;
   text-transform: uppercase !important;
   font-weight: 700 !important;
   padding-right: 30px !important;
