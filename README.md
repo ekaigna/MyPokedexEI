@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# My Pokedex
+
+## Description
+
+This app is designed to catalog and provide information regarding the various species of Pokémon featured in the Pokémon video game, anime and manga series.
+
+## Functional requirements
+
+1. The user is able to see a main screen with a list of all Pokémons (with
+corresponding name, image and type(s) for each of them).
+2. In the main page a pagination is applied in the list of Pokémons.
+3. From the main page, while clicking a Pokémon, the user is able to navigate to
+another page containing the details of that Pokémon.
+4. In the Pokémon details page, the user can see the image and
+the name of Pokémon, Pokémon's stats , its height, weight, experience, and additionally, a list of abilities and Pokémon's type(s).
+5. In the Pokémon detail page, the user can favorite the Pokémon by pressing the heart icon. It can also unselect the Pokémon from the list of favorites by clicking again on heart icon.
+6. From the main page, the user is able to navigate to "Favorites" page. This page
+contains a list of  the favorite Pokémons (with corresponding name, image and type(s) for each
+of them).
+
+## Technical requirements
+
+7. This application was implemented in ReactJS.
+8. To get the list of Pókemons and their details, the PokéAPI: https://pokeapi.co/ was used (see
+documentation for more details).
+9. The local storage was used to handle the list of favorite Pokémons.
+10. React Bootstrap was chosen as a primary UI framework .
+11. The app is responsive and adapts UI by displaying it in different screen sizes (web and mobile).
+12. The code contains comments about different implementations, functions and components used.
+13. The application code was submitted in GitHub and can be accessed via the following link: https://github.com/ekaigna/MyPokedexEI 
+
+## Addicional requirements
+
+This app used React Bootstrap Carousel, React Paginate and React Content Loader. Addionally, React Hooks such as useEffect, useState (state management) and useContext were implemented in this app. To navigate between pages, React Router was used. 
+
+## Technologies
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The main technology used for the Pokedex app was React - a JavaScript library for building user interfaces, also using PokéAPI: https://pokeapi.co/.
 
-## Available Scripts
+## Instalation steps
 
-In the project directory, you can run:
+In the project directory, the used can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+which runs the app in the development mode.\
+The user should open [http://localhost:3000](http://localhost:3000) to view it in browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
