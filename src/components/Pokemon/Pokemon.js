@@ -1,8 +1,4 @@
-import React, { useContext } from "react";
-import FavoriteContext from "../../contexts/favouritesContext";
-import { useLocation } from "react-router-dom";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 import typeToColorMapper from "../colors";
 import typeToChipColorMapper from "../chipColors";
 import "./Pokemon.css";
@@ -11,21 +7,11 @@ import "./Pokemon.css";
 
 const Pokemon = (props) => {
   const { pokemon } = props;
-  const { favoritePokemonNames, updateFavoritePokemons } =
-    useContext(FavoriteContext);
-
-  const location = useLocation();
-
-  const onHeartClick = () => {
-    updateFavoritePokemons(pokemon.name);
-  };
 
   //colors used
   const pokemon_color = typeToColorMapper[pokemon.types[0].type.name];
   const chip_pokemon_color = typeToChipColorMapper[pokemon.types[0].type.name];
-  const heart_color = favoritePokemonNames.includes(pokemon.name)
-    ? "#406264"
-    : "#65979a";
+
 
   return (
     <div
