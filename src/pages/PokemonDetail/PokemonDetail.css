@@ -1,14 +1,13 @@
 .detail-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 5%;
 }
 
 .detail-grid-container {
   display: grid;
-  height: 100vh;
   grid-template-columns: 1fr;
   padding-top: 4%;
+  padding-bottom: 4%;
   gap: 2rem;
   grid-template-rows: 1fr;
   grid-template-areas:
@@ -23,7 +22,7 @@
 @media (min-width: 900px) {
   .detail-grid-container {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 400px 200px;
     grid-template-areas:
       "image-detail stats"
       "description weakness";
@@ -33,18 +32,16 @@
 }
 
 .carousel {
-  width: 250px;
-  height: 250px;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@media (min-width: 500px) {
+@media (max-width: 500px) {
   .carousel {
-    width: 400px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
   }
 }
 

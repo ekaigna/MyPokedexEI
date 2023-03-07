@@ -43,18 +43,6 @@ const Pokemon = (props) => {
             className="pokemon-image"
           />
         )}
-        {/* using favorite icon only on detail page */}
-        {location.pathname === "/pokemonDetail/:name" ? (
-          <div className="favorite">
-            <button onClick={onHeartClick}>
-              <FontAwesomeIcon
-                color={heart_color}
-                className="heart-icon"
-                icon={faHeart}
-              />
-            </button>
-          </div>
-        ) : null}
       </div>
       <div className="pokemon-card-body">
         <div className="card-top">
